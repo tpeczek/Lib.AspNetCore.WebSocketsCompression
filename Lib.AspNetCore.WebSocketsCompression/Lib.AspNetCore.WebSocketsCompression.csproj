@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Description>Lib.AspNetCore.WebSocketsCompression is a library which provides a managed implementation of the WebSocket protocol, along with server integration components and support for permessage-deflate compression.</Description>
+    <Copyright>Copyright © 2017 Tomasz Pęczek</Copyright>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <Authors>Tomasz Pęczek</Authors>
+    <TargetFrameworks>net451;netstandard1.3</TargetFrameworks>
+    <AssemblyTitle>Lib.AspNetCore.WebSocketsCompression</AssemblyTitle>
+    <AssemblyName>Lib.AspNetCore.WebSocketsCompression</AssemblyName>
+    <PackageId>Lib.AspNetCore.WebSocketsCompression</PackageId>
+    <PackageTags>aspnetcore;websockets;compression;permessage-deflate</PackageTags>
+    <PackageProjectUrl>https://github.com/tpeczek/Lib.AspNetCore.WebSocketsCompression</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/tpeczek/Lib.AspNetCore.WebSocketsCompression/blob/master/LICENSE.md</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>git://github.com/tpeczek/Lib.AspNetCore.WebSocketsCompression</RepositoryUrl>
+    <GenerateAssemblyTitleAttribute>true</GenerateAssemblyTitleAttribute>
+    <GenerateAssemblyDescriptionAttribute>true</GenerateAssemblyDescriptionAttribute>
+    <GenerateAssemblyProductAttribute>true</GenerateAssemblyProductAttribute>
+    <GenerateAssemblyCopyrightAttribute>true</GenerateAssemblyCopyrightAttribute>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="1.0.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.2" />
+  </ItemGroup>
+</Project>
