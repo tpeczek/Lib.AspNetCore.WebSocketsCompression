@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Net.WebSockets;
 using System.Collections.Generic;
 using Lib.AspNetCore.WebSocketsCompression.Net.WebSockets;
+using System.IO;
 
 namespace Lib.AspNetCore.WebSocketsCompression.Providers
 {
@@ -141,16 +142,17 @@ namespace Lib.AspNetCore.WebSocketsCompression.Providers
             }
             else
             {
-                IEnumerable<byte> webSocketReceivedBytesEnumerable = Enumerable.Empty<byte>();
-                webSocketReceivedBytesEnumerable = webSocketReceivedBytesEnumerable.Concat(receivePayloadBuffer);
-
-                while (!webSocketReceiveResult.EndOfMessage)
+                using (MemoryStream messagePayloadStream = new MemoryStream())
                 {
-                    webSocketReceiveResult = await webSocket.ReceiveAsync(new ArraySegment<byte>(receivePayloadBuffer), CancellationToken.None);
-                    webSocketReceivedBytesEnumerable = webSocketReceivedBytesEnumerable.Concat(receivePayloadBuffer.Take(webSocketReceiveResult.Count));
-                }
+                    messagePayloadStream.Write(receivePayloadBuffer, 0, webSocketReceiveResult.Count);
+                    while (!webSocketReceiveResult.EndOfMessage)
+                    {
+                        webSocketReceiveResult = await webSocket.ReceiveAsync(new ArraySegment<byte>(receivePayloadBuffer), CancellationToken.None);
+                        messagePayloadStream.Write(receivePayloadBuffer, 0, webSocketReceiveResult.Count);
+                    }
 
-                messagePayload = webSocketReceivedBytesEnumerable.ToArray();
+                    messagePayload = messagePayloadStream.ToArray();
+                }
             }
 
             return messagePayload;
