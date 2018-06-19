@@ -132,10 +132,7 @@ namespace Lib.AspNetCore.WebSocketsCompression.Http.Features
         {
             WebSocketCompressionAcceptContext compressionAcceptContext = acceptContext as WebSocketCompressionAcceptContext;
 
-            return new CompressionWebSocket(await _upgradeFeature.UpgradeAsync(), subProtocol,
-                compressionAcceptContext?.KeepAliveInterval ?? _options.KeepAliveInterval,
-                compressionAcceptContext?.ReceiveBufferSize ?? _options.ReceiveBufferSize
-            );
+            return new CompressionWebSocket(await _upgradeFeature.UpgradeAsync(), subProtocol, compressionAcceptContext?.KeepAliveInterval ?? _options.KeepAliveInterval);
         }
         #endregion
     }
