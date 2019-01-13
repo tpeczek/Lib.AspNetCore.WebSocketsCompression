@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Lib.AspNetCore.WebSocketsCompression is a library which provides a managed implementation of the WebSocket protocol, along with server integration components and support for permessage-deflate compression.</Description>
-    <Copyright>Copyright © 2017 - 2018 Tomasz Pęczek</Copyright>
+    <Copyright>Copyright © 2017 - 2019 Tomasz Pęczek</Copyright>
     <VersionPrefix>0.1.0</VersionPrefix>
     <Authors>Tomasz Pęczek</Authors>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
