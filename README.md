@@ -1,5 +1,10 @@
-# Lib.AspNetCore.WebSocketsCompression
-[![NuGet version](https://badge.fury.io/nu/Lib.AspNetCore.WebSocketsCompression.svg)](http://badge.fury.io/nu/Lib.AspNetCore.WebSocketsCompression)
+# Lib.AspNetCore.WebSocketsCompression [Archived]
+
+---
+
+**This project has been archived as there is built-in WebSocket compression coming in ASP.NET Core 6. You can read more [here](https://devblogs.microsoft.com/aspnet/asp-net-core-updates-in-net-6-preview-6/#websocket-compression).**
+
+---
 
 Lib.AspNetCore.WebSocketsCompression is a library which provides a managed implementation of the WebSocket protocol, along with server integration components and support for permessage-deflate compression.
 
